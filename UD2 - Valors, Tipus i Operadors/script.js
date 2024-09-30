@@ -102,9 +102,9 @@
 // console.log("pepe" || "joan"); // imprime pepe
 // console.log("" || "joan"); // imprime joan
 
-console.log(0 || 100);
-console.log(0 && 100);
+// console.log(0 || 100);
+// console.log(0 && 100);
 
 // ?? -> se elije el lado de la derecha si el izquierdo es null o undefined
-console.log(0 ?? 100); // 0
-console.log(null ?? 100); // 100
+// console.log(0 ?? 100); // 0
+// console.log(null ?? 100); // 100
