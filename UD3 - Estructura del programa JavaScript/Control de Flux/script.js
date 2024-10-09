@@ -173,56 +173,56 @@
 // }
 // console.log(tabla);
 
-let pregunta = prompt("¿Que ejercicio quieres hacer?");
-switch (pregunta) {
-	case "1":
-		let cadena = "#";
-		while (cadena.length <= 7) {
-			console.log(cadena);
-			cadena += "#";
-		}
-		break;
-	case "2":
-		for (let i = 1; i <= 100; i++) {
-			console.log(i);
-			if (i % 3 == 0) {
-				console.log("Jander : 3");
-			}
-			if (i % 5 == 0 && !(i % 3 == 0)) {
-				console.log("Clander : 5");
-			}
-		}
-		break;
-	case "2 Extension Pack":
-		for (let i = 1; i <= 100; i++) {
-			if (i % 3 == 0 && !(i % 5 == 0)) {
-				console.log("Jander");
-			}
-			if (i % 5 == 0 && !(i % 3 == 0)) {
-				console.log("Clander");
-			}
-			if (i % 5 == 0 && i % 3 == 0) {
-				console.log("JanderClander");
-			}
-			console.log(i);
-		}
-		break;
-	case "3":
-		let tabla = "";
-		let col = prompt("Dime las columnas de la tabla: ");
-		let row = prompt("Dime las filas de la tabla: ");
-		for (let i = 0; i < col; i++) {
-			for (let j = 0; j < row; j++) {
-				if ((i + j) % 2 == 0) {
-					tabla += " ";
-				} else {
-					tabla += "#";
-				}
-			}
-			tabla += "\n";
-		}
-		console.log(tabla);
-		break;
-	default:
-		console.log("No se ha introducido correctamente el nombre de un ejercicio.");
-}
+// let pregunta = prompt("¿Que ejercicio quieres hacer?");
+// switch (pregunta) {
+// 	case "1":
+// 		let cadena = "#";
+// 		while (cadena.length <= 7) {
+// 			console.log(cadena);
+// 			cadena += "#";
+// 		}
+// 		break;
+// 	case "2":
+// 		for (let i = 1; i <= 100; i++) {
+// 			console.log(i);
+// 			if (i % 3 == 0) {
+// 				console.log("Jander : 3");
+// 			}
+// 			if (i % 5 == 0 && !(i % 3 == 0)) {
+// 				console.log("Clander : 5");
+// 			}
+// 		}
+// 		break;
+// 	case "2 Extension Pack":
+// 		for (let i = 1; i <= 100; i++) {
+// 			if (i % 3 == 0 && !(i % 5 == 0)) {
+// 				console.log("Jander");
+// 			}
+// 			if (i % 5 == 0 && !(i % 3 == 0)) {
+// 				console.log("Clander");
+// 			}
+// 			if (i % 5 == 0 && i % 3 == 0) {
+// 				console.log("JanderClander");
+// 			}
+// 			console.log(i);
+// 		}
+// 		break;
+// 	case "3":
+// 		let tabla = "";
+// 		let col = prompt("Dime las columnas de la tabla: ");
+// 		let row = prompt("Dime las filas de la tabla: ");
+// 		for (let i = 0; i < col; i++) {
+// 			for (let j = 0; j < row; j++) {
+// 				if ((i + j) % 2 == 0) {
+// 					tabla += " ";
+// 				} else {
+// 					tabla += "#";
+// 				}
+// 			}
+// 			tabla += "\n";
+// 		}
+// 		console.log(tabla);
+// 		break;
+// 	default:
+// 		console.log("No se ha introducido correctamente el nombre de un ejercicio.");
+// }
