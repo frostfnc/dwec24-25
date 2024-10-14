@@ -152,13 +152,13 @@
 // imprimirInventarioGranja(2, 15);
 
 // FUNCTION para rellenar con ceros un numero.
-// function rellenarConCeros(numero, longitud) {
-// 	let cadenaNumero = String(numero);
-// 	while (cadenaNumero.length < longitud) {
-// 		cadenaNumero = "0" + cadenaNumero;
-// 	}
-// 	return cadenaNumero;
-// }
+function rellenarConCeros(numero, longitud) {
+	let cadenaNumero = String(numero);
+	while (cadenaNumero.length < longitud) {
+		cadenaNumero = "0" + cadenaNumero;
+	}
+	return cadenaNumero;
+}
 
 // function imprimirInventarioGranja(vacas, pollos, cerdos) {
 // 	console.log(`${rellenarConCeros(vacas, 3)} Vacas`);
@@ -202,4 +202,85 @@
 // console.log(esPar(2));
 // console.log(esPar(3));
 
-function 
+function esKaprekar(numero) {
+	if (typeof numero != "number" || numero < 0 || numero > 9999) {
+		return "El numero ha de ser un enter positiu de 4 dígits o menys";
+	}
+
+	let numeroString = String(numero).padStart(4, "0");
+
+	let i = 0;
+	console.log(`Número inicial: ${numeroString}`);
+	while (numeroString != "6174" && i < 40) {
+		let ascendent = ordenarAscendent(numeroString);
+		let descendent = ordenarDescendent(numeroString);
+
+		let resultat = restarNumeros(descendent, ascendent);
+
+		console.log(`Iteració ${i + 1}: ${descendent} - ${ascendent} = ${resultat}`);
+
+		numeroString = resultat;
+		i++;
+	}
+
+	if (numeroString == "6174") {
+		console.log(`Kaprekar trobat en ${i} iteracions.`);
+	} else {
+		console.log(`No s'ha trobat Kaprekar en 40 iteracions.`);
+	}
+}
+
+function ordenarAscendent(numero) {
+	let arr = [];
+	for (let i = 0; i < numero.length; i++) {
+		arr[i] = numero[i];
+	}
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = i + 1; j < arr.length; j++) {
+			if (arr[i] > arr[j]) {
+				let temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	let resultat = "";
+	for (let i = 0; i < arr.length; i++) {
+		resultat += arr[i];
+	}
+	return resultat;
+}
+
+function ordenarDescendent(numero) {
+	let arr = [];
+	for (let i = 0; i < numero.length; i++) {
+		arr.push(numero[i]);
+	}
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = i + 1; j < arr.length; j++) {
+			if (arr[i] < arr[j]) {
+				let temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	let resultado = "";
+	for (let i = 0; i < arr.length; i++) {
+		resultado += arr[i];
+	}
+	return resultado;
+}
+
+function restarNumeros(descendent, ascendent) {
+	let numDesc = parseInt(descendent, 10);
+	let numAsc = parseInt(ascendent, 10);
+	let resultado = numDesc - numAsc;
+	let resultatString = String(resultado);
+	while (resultatString.length < 4) {
+		resultatString = "0" + resultatString;
+	}
+	return resultatString;
+}
+
+console.log(esKaprekar(435));
