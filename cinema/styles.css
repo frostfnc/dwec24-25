@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Doto:wght@100..900&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Doto", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 900;
+	font-style: normal;
+	font-size: 2rem;
+	font-variation-settings: "ROND" 0;
+	background-color: #464646;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container-movie {
+	margin: 2rem 0;
+}
+
+.container-movie select {
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #fff;
+	font-family: "Doto", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 900;
+	font-style: normal;
+	border: 0;
+	padding: 0.5rem 1rem;
+	font-size: 2rem;
+}
+
+.container-movie select > option {
+	color: #fff;
+	border: 0;
+	font-weight: 900;
+}
+
+.seat {
+	background-color: rgb(101, 101, 101);
+	height: 1rem;
+	width: 1rem;
+	margin: 0.3rem;
+	border-top-left-radius: 0.6rem;
+	border-top-right-radius: 0.6rem;
+}
+
+.seat.selected {
+	background-color: rgb(95, 158, 160);
+}
+
+.seat.occupied {
+	background-color: rgb(255, 255, 255);
+}
+
+.seat:nth-of-type(2) {
+	margin-right: 1rem;
+}
+
+.seat:nth-last-of-type(2) {
+	margin-left: 1rem;
+}
+
+.seat:not(.occupied):hover {
+	cursor: pointer;
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+}
+
+.legend {
+	background-color: rgba(0, 0, 0, 0.3);
+	padding: 0.5rem;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+}
+
+.legend li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0.5rem 1rem;
+}
+
+.legend .seat:not(.occupied):hover {
+	cursor: default;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+}
+.row {
+	display: flex;
+}
+
+.screen {
+	background-color: #fff;
+	height: 6rem;
+	width: 100%;
+	margin: 1rem 0;
+	transform: rotateX(-45deg);
+	-webkit-transform: rotateX(-45deg);
+	-moz-transform: rotateX(-45deg);
+	-ms-transform: rotateX(-45deg);
+	-o-transform: rotateX(-45deg);
+	box-shadow: 0 3px 10px rgba(255, 255, 255, 1);
+}
+
+.container {
+	perspective: 1000px;
+}
